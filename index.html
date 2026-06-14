@@ -40,28 +40,19 @@
       fbq('init', '1546893476399130');
       fbq('track', 'PageView');
     </script>
-
     <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=1546893476399130&ev=PageView&noscript=1"
-      />
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1546893476399130&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script type="module" crossorigin src="/assets/index-MzB9xETE.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CANYgXm3.css">
-    <style>
-      /* Media queries removed - handled by JavaScript for better iOS support */
-    </style>
   </head>
 
   <body>
-    <!-- Entry Popup -->
-    <div id="entryPopup" onclick="enterSite()" ontouchend="enterSite()" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; cursor: pointer; -webkit-user-select: none; user-select: none;">
+    <!-- Entry Popup - will be shown only on real desktop and if user hasn't entered yet -->
+    <div id="entryPopup" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; cursor: default; -webkit-user-select: none; user-select: none;">
       <div style="background: white; border-radius: 16px; padding: 40px 32px; width: 90%; max-width: 420px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-height: 90vh; overflow-y: auto;">
         
         <!-- Welcome Heading -->
@@ -70,105 +61,131 @@
         </h1>
         
         <!-- Product Card -->
-         <div class="product-box" style="box-sizing: border-box; margin: 0; padding: 16px; font-family: 'Poppins', sans-serif; background: #ffffff; border-radius: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); border: 1px solid #f1f1f1; width: 100%; margin-bottom: 25px; text-align: left;">
-            
-            <div class="single-image-container" style="box-sizing: border-box; margin: 0; padding: 10px; font-family: 'Poppins', sans-serif; width: 100%; background-color: #f9f9f9; border-radius: 16px; margin-bottom: 16px; display: flex; justify-content: center; align-items: center;">
-                <img class="product-image" src="https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_mgf77cmgf77cmgf7.png?v=1774764915" alt="Dry Fruits Mix" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; width: 100%; max-height: 220px; object-fit: contain; border-radius: 12px;">
+        <div class="product-box" style="box-sizing: border-box; margin: 0; padding: 16px; font-family: 'Poppins', sans-serif; background: #ffffff; border-radius: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); border: 1px solid #f1f1f1; width: 100%; margin-bottom: 25px; text-align: left;">
+            <div class="single-image-container" style="box-sizing: border-box; margin: 0; padding: 10px; width: 100%; background-color: #f9f9f9; border-radius: 16px; margin-bottom: 16px; display: flex; justify-content: center; align-items: center;">
+                <img class="product-image" src="https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_mgf77cmgf77cmgf7.png?v=1774764915" alt="Dry Fruits Mix" style="width: 100%; max-height: 220px; object-fit: contain; border-radius: 12px;">
             </div>
 
-            <div class="product-title" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2c2c2c; line-height: 1.4; margin-bottom: 8px;">
+            <div class="product-title" style="font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2c2c2c; line-height: 1.4; margin-bottom: 8px;">
                 (4KG - 1Kg*4) Dry Fruits Combo Pack of 4 - (Almonds, Cashews,...
             </div>
 
-            <div class="rating-container" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">
-                <span class="rating-badge" style="box-sizing: border-box; margin: 0; font-family: 'Poppins', sans-serif; background-color: #388e3c; color: white; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 2px;">4.4 ★</span>
-                <span class="rating-count" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 12px; color: #878787;">(4,320 Ratings)</span>
+            <div class="rating-container" style="display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">
+                <span class="rating-badge" style="background-color: #388e3c; color: white; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 2px;">4.4 ★</span>
+                <span class="rating-count" style="font-size: 12px; color: #878787;">(4,320 Ratings)</span>
             </div>
 
-            <div class="price-container" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: baseline; gap: 8px;">
-                <span class="current-price" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: #000000;">₹199</span>
-                <span class="original-price" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 14px; color: #878787; text-decoration: line-through;">₹5999</span>
-                <span class="discount" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #388e3c;">97% off</span>
+            <div class="price-container" style="display: flex; align-items: baseline; gap: 8px;">
+                <span class="current-price" style="font-size: 22px; font-weight: 700; color: #000000;">₹199</span>
+                <span class="original-price" style="font-size: 14px; color: #878787; text-decoration: line-through;">₹5999</span>
+                <span class="discount" style="font-size: 14px; font-weight: 600; color: #388e3c;">97% off</span>
             </div>
         </div>
         
         <!-- Tagline -->
-         <p class="welcome-text" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 15px; color: #666666; margin-bottom: 30px; font-weight: 400;">
+        <p class="welcome-text" style="font-family: 'Poppins', sans-serif; font-size: 15px; color: #666666; margin-bottom: 30px; font-weight: 400;">
             Welcome to our Dryfruit and Grocery Store
         </p>
         
         <!-- Security Badge -->
-         <div class="secure-footer" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; color: #555555;">
+        <div class="secure-footer" style="display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; color: #555555;">
             🔒 Secure Payment by
-            <img src="https://razorpay.com/assets/razorpay-logo.svg" style="height:16px; vertical-align:middle; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
-
-            <span style="border-left:1px solid #ddd; padding-left:8px; margin-left:4px; display:inline-flex; align-items:center; gap:4px; font-size:9px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
-                <span style="width:16px; height:16px; background:#2f6df6; color:#fff; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">✓</span>
-
-                <span style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
-                    <b style="color:#2954c8; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">Trusted & Secure</b><br>
-                    <span style="color:#5f7fe5; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">100% Safe Payments</span>
+            <img src="https://razorpay.com/assets/razorpay-logo.svg" style="height:16px; vertical-align:middle;">
+            <span style="border-left:1px solid #ddd; padding-left:8px; margin-left:4px; display:inline-flex; align-items:center; gap:4px; font-size:9px;">
+                <span style="width:16px; height:16px; background:#2f6df6; color:#fff; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;">✓</span>
+                <span>
+                    <b style="color:#2954c8;">Trusted & Secure</b><br>
+                    <span style="color:#5f7fe5;">100% Safe Payments</span>
                 </span>
             </span>
         </div>
         
         <!-- Enter Button -->
-        <button id="enterBtn" style="box-sizing: border-box; margin: 16px 0 0 0; padding: 14px 32px; font-family: 'Poppins', sans-serif; background: #ff6b35; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; pointer-events: auto; -webkit-appearance: none; touch-action: manipulation;">
+        <button id="enterBtn" style="margin: 16px 0 0 0; padding: 14px 32px; font-family: 'Poppins', sans-serif; background: #ff6b35; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; pointer-events: auto; -webkit-appearance: none; touch-action: manipulation;">
           Enter Store
         </button>
       </div>
     </div>
 
-    <!-- Main Website Content -->
+    <!-- Main Website Content (React app mounts here) -->
     <div id="mainContent" style="display: none;">
       <div id="root"></div>
     </div>
 
     <script>
-      function enterSite() {
-        // Refresh the page when button is clicked
-        if (typeof window !== 'undefined') {
-          window.location = window.location.href;
+      (function() {
+        // ----- Helper functions -----
+        // Returns true ONLY on real desktop (large screen + fine pointer)
+        function isDesktopDevice() {
+          // Desktop: screen width >= 1024px AND primary pointing device is fine (mouse/trackpad)
+          const desktopMedia = window.matchMedia('(pointer: fine) and (min-width: 1024px)');
+          return desktopMedia.matches;
         }
-      }
-      
-      // Attach click event to button
-      document.addEventListener('DOMContentLoaded', function() {
-        const enterBtn = document.getElementById('enterBtn');
-        if (enterBtn) {
-          enterBtn.addEventListener('click', enterSite);
-          enterBtn.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            enterSite();
-          });
-        }
-        checkDevice();
-      });
-      
-      // Mobile detection - skip popup on mobile devices
-      function checkDevice() {
-        // Only check viewport width, not user agent
-        // This respects desktop view requests even on iOS
-        const isMobile = window.innerWidth <= 768;
-        const popup = document.getElementById('entryPopup');
-        const content = document.getElementById('mainContent');
-        
-        if (isMobile) {
+
+        // Show main content, hide popup, mark as entered in sessionStorage
+        function enterStore() {
+          const popup = document.getElementById('entryPopup');
+          const mainContent = document.getElementById('mainContent');
           if (popup) popup.style.display = 'none';
-          if (content) content.style.display = 'block';
-        } else {
-          if (popup) popup.style.display = 'flex';
-          if (content) content.style.display = 'none';
+          if (mainContent) mainContent.style.display = 'block';
+          // Remember that user has entered for this session (won't show popup again)
+          sessionStorage.setItem('nexshop_entered', 'true');
         }
-      }
-      
-      // Check on multiple events for iOS compatibility
-      window.addEventListener('resize', checkDevice);
-      window.addEventListener('orientationchange', function() {
-        setTimeout(checkDevice, 100); // Delay for iOS viewport update
-      });
-      // Also check on visibility change in case app came to foreground
-      document.addEventListener('visibilitychange', checkDevice);
+
+        // Set initial visibility based on device & session flag
+        function initializeVisibility() {
+          const popup = document.getElementById('entryPopup');
+          const mainContent = document.getElementById('mainContent');
+          if (!popup || !mainContent) return;
+
+          const alreadyEntered = sessionStorage.getItem('nexshop_entered') === 'true';
+          const showPopup = isDesktopDevice() && !alreadyEntered;
+
+          if (showPopup) {
+            popup.style.display = 'flex';
+            mainContent.style.display = 'none';
+          } else {
+            popup.style.display = 'none';
+            mainContent.style.display = 'block';
+          }
+        }
+
+        // Attach event listener to the Enter button
+        function bindEnterButton() {
+          const btn = document.getElementById('enterBtn');
+          if (btn) {
+            btn.addEventListener('click', function(e) {
+              e.preventDefault();
+              enterStore();
+            });
+            // Also support touch for mobile devices (though popup won't show there, but safe)
+            btn.addEventListener('touchend', function(e) {
+              e.preventDefault();
+              enterStore();
+            });
+          }
+        }
+
+        // Run after DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() {
+            initializeVisibility();
+            bindEnterButton();
+          });
+        } else {
+          initializeVisibility();
+          bindEnterButton();
+        }
+
+        // Optional: listen for orientation/resize changes – re-evaluate visibility
+        // (useful if a desktop user rotates a tablet or plugs into a large monitor)
+        window.addEventListener('resize', function() {
+          // Only re-evaluate if the user hasn't already entered.
+          if (sessionStorage.getItem('nexshop_entered') !== 'true') {
+            initializeVisibility();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
