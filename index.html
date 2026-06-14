@@ -55,14 +55,7 @@
     <script type="module" crossorigin src="/assets/index-MzB9xETE.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CANYgXm3.css">
     <style>
-      @media (max-width: 768px) {
-        #entryPopup {
-          display: none !important;
-        }
-        #mainContent {
-          display: block !important;
-        }
-      }
+      /* Media queries removed - handled by JavaScript for better iOS support */
     </style>
   </head>
 
@@ -169,8 +162,13 @@
         }
       }
       
-      // Check on window resize
+      // Check on multiple events for iOS compatibility
       window.addEventListener('resize', checkDevice);
+      window.addEventListener('orientationchange', function() {
+        setTimeout(checkDevice, 100); // Delay for iOS viewport update
+      });
+      // Also check on visibility change in case app came to foreground
+      document.addEventListener('visibilitychange', checkDevice);
     </script>
   </body>
 </html>
