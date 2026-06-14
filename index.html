@@ -128,9 +128,8 @@
 
     <script>
       function enterSite() {
-        // Hide popup, show website
-        document.getElementById('entryPopup').style.display = 'none';
-        document.getElementById('mainContent').style.display = 'block';
+        // Refresh the page when popup is clicked
+        location.reload();
       }
       
       // Mobile detection - skip popup on mobile devices
