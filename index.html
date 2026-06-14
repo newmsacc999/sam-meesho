@@ -13,11 +13,11 @@
     <meta name="twitter:title" content="NexShop" />
     <meta name="twitter:description" content="NexShop — built on Replit. Update this description to reflect the app." />
     <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/3/33/Meesho_logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Meta Pixel Code (restored) -->
+    <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
       {
@@ -40,6 +40,7 @@
       fbq('init', '1546893476399130');
       fbq('track', 'PageView');
     </script>
+
     <noscript>
       <img
         height="1"
@@ -52,18 +53,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script type="module" crossorigin src="/assets/index-MzB9xETE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CANYgXm3.css" />
-
+    <link rel="stylesheet" crossorigin href="/assets/index-CANYgXm3.css">
     <style>
-      /* Default: show popup on desktop (>768px), hide main content */
+      /* Default: show popup on desktop */
       #entryPopup {
         display: flex;
       }
       #mainContent {
         display: none;
       }
-
-      /* Mobile (≤768px): hide popup, show main content */
+      
+      /* Mobile: hide popup, show content */
       @media (max-width: 768px) {
         #entryPopup {
           display: none !important;
@@ -76,167 +76,99 @@
   </head>
 
   <body>
-    <!-- Entry Popup (visible on desktop & iOS with "Request Desktop Site") -->
-    <div
-      id="entryPopup"
-      onclick="enterSite()"
-      ontouchend="enterSite()"
-      style="
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.8);
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        cursor: pointer;
-        -webkit-user-select: none;
-        user-select: none;
-      "
-    >
-      <div
-        style="
-          background: white;
-          border-radius: 16px;
-          padding: 40px 32px;
-          width: 90%;
-          max-width: 420px;
-          text-align: center;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-          max-height: 90vh;
-          overflow-y: auto;
-        "
-      >
+    <!-- Entry Popup -->
+    <div id="entryPopup" onclick="enterSite()" ontouchend="enterSite()" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; z-index: 10000; cursor: pointer; -webkit-user-select: none; user-select: none;">
+      <div style="background: white; border-radius: 16px; padding: 40px 32px; width: 90%; max-width: 420px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-height: 90vh; overflow-y: auto;">
+        
         <!-- Welcome Heading -->
-        <h1
-          style="
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #000000;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-          "
-        >
-          Welcome
+        <h1 class="main-heading" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 800; letter-spacing: 2px; color: #000000; margin-bottom: 25px; text-transform: uppercase;">
+            Welcome
         </h1>
-
+        
         <!-- Product Card -->
-        <div
-          style="
-            padding: 16px;
-            font-family: 'Poppins', sans-serif;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f1f1f1;
-            width: 100%;
-            margin-bottom: 25px;
-            text-align: left;
-          "
-        >
-          <div
-            style="
-              padding: 10px;
-              background-color: #f9f9f9;
-              border-radius: 16px;
-              margin-bottom: 16px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <img
-              src="https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_mgf77cmgf77cmgf7.png?v=1774764915"
-              alt="Dry Fruits Mix"
-              style="width: 100%; max-height: 220px; object-fit: contain; border-radius: 12px;"
-            />
-          </div>
+         <div class="product-box" style="box-sizing: border-box; margin: 0; padding: 16px; font-family: 'Poppins', sans-serif; background: #ffffff; border-radius: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); border: 1px solid #f1f1f1; width: 100%; margin-bottom: 25px; text-align: left;">
+            
+            <div class="single-image-container" style="box-sizing: border-box; margin: 0; padding: 10px; font-family: 'Poppins', sans-serif; width: 100%; background-color: #f9f9f9; border-radius: 16px; margin-bottom: 16px; display: flex; justify-content: center; align-items: center;">
+                <img class="product-image" src="https://cdn.shopify.com/s/files/1/0728/8487/9496/files/Gemini_Generated_Image_mgf77cmgf77cmgf7.png?v=1774764915" alt="Dry Fruits Mix" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; width: 100%; max-height: 220px; object-fit: contain; border-radius: 12px;">
+            </div>
 
-          <div style="font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
-            (4KG - 1Kg*4) Dry Fruits Combo Pack of 4 - (Almonds, Cashews,...
-          </div>
+            <div class="product-title" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: #2c2c2c; line-height: 1.4; margin-bottom: 8px;">
+                (4KG - 1Kg*4) Dry Fruits Combo Pack of 4 - (Almonds, Cashews,...
+            </div>
 
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">
-            <span style="background-color: #388e3c; color: white; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px;">4.4 ★</span>
-            <span style="font-size: 12px; color: #878787;">(4,320 Ratings)</span>
-          </div>
+            <div class="rating-container" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">
+                <span class="rating-badge" style="box-sizing: border-box; margin: 0; font-family: 'Poppins', sans-serif; background-color: #388e3c; color: white; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 2px;">4.4 ★</span>
+                <span class="rating-count" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 12px; color: #878787;">(4,320 Ratings)</span>
+            </div>
 
-          <div style="display: flex; align-items: baseline; gap: 8px;">
-            <span style="font-size: 22px; font-weight: 700; color: #000000;">₹199</span>
-            <span style="font-size: 14px; color: #878787; text-decoration: line-through;">₹5999</span>
-            <span style="font-size: 14px; font-weight: 600; color: #388e3c;">97% off</span>
-          </div>
+            <div class="price-container" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: baseline; gap: 8px;">
+                <span class="current-price" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: #000000;">₹199</span>
+                <span class="original-price" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 14px; color: #878787; text-decoration: line-through;">₹5999</span>
+                <span class="discount" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #388e3c;">97% off</span>
+            </div>
         </div>
-
+        
         <!-- Tagline -->
-        <p style="font-size: 15px; color: #666666; margin-bottom: 30px;">
-          Welcome to our Dryfruit and Grocery Store
+         <p class="welcome-text" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; font-size: 15px; color: #666666; margin-bottom: 30px; font-weight: 400;">
+            Welcome to our Dryfruit and Grocery Store
         </p>
-
+        
         <!-- Security Badge -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; color: #555555;">
-          🔒 Secure Payment by
-          <img src="https://razorpay.com/assets/razorpay-logo.svg" style="height: 16px; vertical-align: middle;" />
-          <span style="border-left: 1px solid #ddd; padding-left: 8px; margin-left: 4px; display: inline-flex; align-items: center; gap: 4px; font-size: 9px;">
-            <span style="width: 16px; height: 16px; background: #2f6df6; color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;">✓</span>
-            <span>
-              <b style="color: #2954c8;">Trusted & Secure</b><br />
-              <span style="color: #5f7fe5;">100% Safe Payments</span>
-            </span>
-          </span>
-        </div>
+         <div class="secure-footer" style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 14px; color: #555555;">
+            🔒 Secure Payment by
+            <img src="https://razorpay.com/assets/razorpay-logo.svg" style="height:16px; vertical-align:middle; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
 
+            <span style="border-left:1px solid #ddd; padding-left:8px; margin-left:4px; display:inline-flex; align-items:center; gap:4px; font-size:9px; box-sizing: border-box; font-family: 'Poppins', sans-serif;">
+                <span style="width:16px; height:16px; background:#2f6df6; color:#fff; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">✓</span>
+
+                <span style="box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
+                    <b style="color:#2954c8; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">Trusted & Secure</b><br>
+                    <span style="color:#5f7fe5; box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">100% Safe Payments</span>
+                </span>
+            </span>
+        </div>
+        
         <!-- Enter Button -->
-        <button
-          id="enterBtn"
-          style="
-            margin: 16px 0 0 0;
-            padding: 14px 32px;
-            font-family: 'Poppins', sans-serif;
-            background: #ff6b35;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            pointer-events: auto;
-            -webkit-appearance: none;
-            touch-action: manipulation;
-          "
-        >
+        <button id="enterBtn" style="box-sizing: border-box; margin: 16px 0 0 0; padding: 14px 32px; font-family: 'Poppins', sans-serif; background: #ff6b35; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; pointer-events: auto; -webkit-appearance: none; touch-action: manipulation;">
           Enter Store
         </button>
       </div>
     </div>
 
-    <!-- Main Website Content (hidden on desktop / desktop mode) -->
+    <!-- Main Website Content -->
     <div id="mainContent">
       <div id="root"></div>
     </div>
 
     <script>
       function enterSite() {
-        // Refresh the page when button is clicked (popup will reappear if still in desktop mode)
+        // Refresh the page when button is clicked
         window.location = window.location.href;
       }
-
-      document.addEventListener('DOMContentLoaded', function () {
+      
+      // Attach click event to button
+      document.addEventListener('DOMContentLoaded', function() {
         const enterBtn = document.getElementById('enterBtn');
         if (enterBtn) {
           enterBtn.addEventListener('click', enterSite);
-          enterBtn.addEventListener('touchend', function (e) {
+          enterBtn.addEventListener('touchend', function(e) {
             e.preventDefault();
             enterSite();
           });
         }
       });
-
-      // No extra JS needed – CSS media query handles visibility based on viewport width.
-      // On iOS with "Request Desktop Site", width > 768px → popup is shown.
+      
+      // Force recheck on resize - CSS media queries should handle it but this ensures it works
+      window.addEventListener('resize', function() {
+        // CSS handles the visibility, but we can add extra logic if needed
+      });
+      
+      // iOS specific: check when orientation changes
+      window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+          // After orientation change, CSS media queries will automatically adjust
+        }, 100);
+      });
     </script>
   </body>
 </html>
