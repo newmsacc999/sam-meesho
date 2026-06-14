@@ -68,7 +68,7 @@
 
   <body>
     <!-- Entry Popup -->
-    <div id="entryPopup" onclick="enterSite()" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; cursor: pointer;">
+    <div id="entryPopup" onclick="enterSite()" ontouchend="enterSite()" style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 10000; cursor: pointer; -webkit-user-select: none; user-select: none;">
       <div style="background: white; border-radius: 16px; padding: 40px 32px; width: 90%; max-width: 420px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-height: 90vh; overflow-y: auto;">
         
         <!-- Welcome Heading -->
@@ -129,15 +129,23 @@
     <script>
       function enterSite() {
         // Refresh the page when popup is clicked
-        location.reload();
+        // Use window.location for better iOS compatibility
+        window.location.href = window.location.href;
       }
       
       // Mobile detection - skip popup on mobile devices
       function checkDevice() {
-        const isMobile = window.innerWidth <= 768;
+        // Check both viewport width and user agent for better iOS detection
+        const isMobile = window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const popup = document.getElementById('entryPopup');
+        const content = document.getElementById('mainContent');
+        
         if (isMobile) {
-          document.getElementById('entryPopup').style.display = 'none';
-          document.getElementById('mainContent').style.display = 'block';
+          if (popup) popup.style.display = 'none';
+          if (content) content.style.display = 'block';
+        } else {
+          if (popup) popup.style.display = 'flex';
+          if (content) content.style.display = 'none';
         }
       }
       
