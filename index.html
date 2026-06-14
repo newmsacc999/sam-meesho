@@ -118,6 +118,11 @@
                 </span>
             </span>
         </div>
+        
+        <!-- Enter Button -->
+        <button id="enterBtn" style="box-sizing: border-box; margin: 16px 0 0 0; padding: 14px 32px; font-family: 'Poppins', sans-serif; background: #ff6b35; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; width: 100%; pointer-events: auto; -webkit-appearance: none; touch-action: manipulation;">
+          Enter Store
+        </button>
       </div>
     </div>
 
@@ -128,15 +133,30 @@
 
     <script>
       function enterSite() {
-        // Refresh the page when popup is clicked
-        // Use window.location for better iOS compatibility
-        window.location.href = window.location.href;
+        // Refresh the page when button is clicked
+        if (typeof window !== 'undefined') {
+          window.location = window.location.href;
+        }
       }
+      
+      // Attach click event to button
+      document.addEventListener('DOMContentLoaded', function() {
+        const enterBtn = document.getElementById('enterBtn');
+        if (enterBtn) {
+          enterBtn.addEventListener('click', enterSite);
+          enterBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            enterSite();
+          });
+        }
+        checkDevice();
+      });
       
       // Mobile detection - skip popup on mobile devices
       function checkDevice() {
-        // Check both viewport width and user agent for better iOS detection
-        const isMobile = window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        // Only check viewport width, not user agent
+        // This respects desktop view requests even on iOS
+        const isMobile = window.innerWidth <= 768;
         const popup = document.getElementById('entryPopup');
         const content = document.getElementById('mainContent');
         
@@ -147,13 +167,6 @@
           if (popup) popup.style.display = 'flex';
           if (content) content.style.display = 'none';
         }
-      }
-      
-      // Check on page load
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', checkDevice);
-      } else {
-        checkDevice();
       }
       
       // Check on window resize
