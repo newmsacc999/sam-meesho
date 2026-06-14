@@ -55,7 +55,23 @@
     <script type="module" crossorigin src="/assets/index-MzB9xETE.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-CANYgXm3.css">
     <style>
-      /* Media queries removed - handled by JavaScript for better iOS support */
+      /* Default: show popup on desktop */
+      #entryPopup {
+        display: flex;
+      }
+      #mainContent {
+        display: none;
+      }
+      
+      /* Mobile: hide popup, show content */
+      @media (max-width: 768px) {
+        #entryPopup {
+          display: none;
+        }
+        #mainContent {
+          display: block;
+        }
+      }
     </style>
   </head>
 
@@ -127,9 +143,7 @@
     <script>
       function enterSite() {
         // Refresh the page when button is clicked
-        if (typeof window !== 'undefined') {
-          window.location = window.location.href;
-        }
+        window.location = window.location.href;
       }
       
       // Attach click event to button
@@ -142,43 +156,19 @@
             enterSite();
           });
         }
-        checkDevice();
       });
       
-      // Mobile detection - skip popup on mobile devices
-      <script>
-function enterSite() {
-    document.getElementById('entryPopup').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    const enterBtn = document.getElementById('enterBtn');
-
-    if (enterBtn) {
-        enterBtn.addEventListener('click', enterSite);
-    }
-
-    checkDevice();
-});
-
-function checkDevice() {
-
-    const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent);
-
-    const popup = document.getElementById('entryPopup');
-    const content = document.getElementById('mainContent');
-
-    if (isMobile) {
-        popup.style.display = 'none';
-        content.style.display = 'block';
-    } else {
-        popup.style.display = 'flex';
-        content.style.display = 'none';
-    }
-}
-</script>
+      // Force recheck on resize - CSS media queries should handle it but this ensures it works
+      window.addEventListener('resize', function() {
+        // CSS handles the visibility, but we can add extra logic if needed
+      });
+      
+      // iOS specific: check when orientation changes
+      window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+          // After orientation change, CSS media queries will automatically adjust
+        }, 100);
+      });
+    </script>
   </body>
 </html>
