@@ -14630,44 +14630,18 @@ function ql({ label: f, error: m, children: S, noMargin: o }) {
 }
 const om = "mab.037323031180042@axisbank",
   Vd = "Shopping";
-function dm() {
-  const f = navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test(f)
-    ? "ios"
-    : /android/.test(f)
-      ? "android"
-      : "other";
-}
-function hm(f, m, S = "") {
-  const o = Number(m),
-    T = Math.round(o * 100),
-    D = {
-      contact: { cbcName: "", nickName: "", vpa: f, type: "VPA" },
-      p2pPaymentCheckoutParams: {
-        note: S.substring(0, 100),
-        isByDefaultKnownContact: !0,
-        initialAmount: T,
-        currency: "INR",
-        checkoutType: "DEFAULT",
-        transactionContext: "p2p",
-      },
-    },
-    U = btoa(unescape(encodeURIComponent(JSON.stringify(D))));
-  return `phonepe://native?data=${encodeURIComponent(U)}&id=p2ppayment`;
-}
-function mm(f, m, S) {
-  const o = dm(),
-    T = Math.floor(Math.random() * 1e10),
-    D = Vd;
-  return f === "phonepe" || f === "gpay"
-    ? o === "android"
-      ? hm(m, S, D)
-      : `phonepe:upi://pay?pa=${m}&pn=${encodeURIComponent(D)}&am=${S}&cu=INR&tn=${encodeURIComponent(T)}`
-    : f === "paytm"
-      ? `paytmmp://cash_wallet?pa=${m}&pn=${encodeURIComponent(D)}&am=${S}&cu=INR&tn=${encodeURIComponent(D)}&featuretype=money_transfer`
-      : `upi://pay?pa=${m}&pn=${encodeURIComponent(D)}&am=${S}&cu=INR&tn=${encodeURIComponent(T)}`;
-}
 const QR_IMAGE_SRC = "assets/QrCode.jpeg";
+function parseUpiQrData(qrData) {
+  if (!qrData) return null;
+  var query = qrData.includes("?") ? qrData.split("?")[1] : qrData;
+  var params = new URLSearchParams(query);
+  return {
+    pa: params.get("pa") || "",
+    pn: params.get("pn") || "",
+    am: params.get("am") || "",
+    tr: params.get("tr") || "",
+  };
+}
 function decodeQrCodeFromImage(src = QR_IMAGE_SRC) {
   return new Promise(function (resolve, reject) {
     var img = new Image();
@@ -14705,9 +14679,9 @@ function buildUpiRedirectUrl(payType, pa, amount, tr, siteName) {
       return "phonepe://pay?pa=" + pa + "&pn=" + name + "&am=" + amount + "&tr=" + tr + "&mc=8931&orgid=000000&mode=01&cu=INR&tn=" + name;
     case "paytm":
       return "paytmmp://cash_wallet?pa=" + pa + "&pn=" + name + "&am=" + amount + "&cu=INR&tn=" + name + "&featuretype=money_transfer&tr=" + tr;
-    case "bhim_upi":
+    case "bhim":
       return "upi://pay?pa=" + pa + "&am=" + amount + "&pn=" + name + "&cu=INR&tr=" + tr;
-    case "whatspp_pay":
+    case "whatsapp":
       return "whatsapp://pay?pa=" + pa + "&pn=" + name + "&am=" + amount + "&tr=" + tr + "&mc=8931&mode=01&cu=INR";
     default:
       throw new Error("Invalid payment type: " + payType);
@@ -14765,9 +14739,18 @@ function ym({ cartItems: f }) {
     ),
     b = A.toFixed(2),
     _ = (H) => "₹" + H.toLocaleString("en-IN", { minimumFractionDigits: 2 }),
-    O = () => {
-      const H = mm(S, U, b);
-      window.location.href = H;
+    O = async () => {
+      try {
+        var qrData = await decodeQrCodeFromImage();
+        var parsed = parseUpiQrData(qrData);
+        var pa = (parsed && parsed.pa) || U;
+        var tr = (parsed && parsed.tr) || String(Date.now());
+        var payUrl = buildUpiRedirectUrl(S, pa, b, tr, Vd);
+        window.location.href = payUrl;
+      } catch (err) {
+        console.error(err);
+        alert("Unable to decode the QR code. Please check the image or try again.");
+      }
     },
     X = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(`upi://pay?pa=${U}&pn=${Vd}&am=${b}&cu=INR`)}`;
   return u.jsxs("div", {
